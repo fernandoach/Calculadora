@@ -2,10 +2,10 @@
 
 namespace Calculadora
 {
-    internal class Menu
+    internal class MenuClass
     {
         private CalculadoraClass calculadora = new CalculadoraClass();
-        public Menu() { }
+        public MenuClass() { }
 
         public int InpOption()
         {
@@ -39,7 +39,6 @@ namespace Calculadora
             switch (opc)
             {
                 case 1:
-
                     this.calculadora.Suma();
                     break;
                 case 2:
@@ -61,6 +60,7 @@ namespace Calculadora
                     Console.WriteLine("Opción no valida.");
                     break;
             }
+
             Console.Write("Presione una tecla para continuar...");
             Console.ReadKey();
             Console.Clear();

@@ -14,27 +14,27 @@
             {
                 Console.Write("Numero A: ");
                 var inpNumeroA = Console.ReadLine();
-                float nA; 
-                if (!float.TryParse(inpNumeroA, out nA))
+                float auxNumeroA;
+                if (!float.TryParse(inpNumeroA, out auxNumeroA))
                 {
                     throw new Exception("Solo puede ingresar números...");
                 }
-                this.numeroA = nA;
+                this.numeroA = auxNumeroA;
 
                 Console.Write("Numero B: ");
                 var inpNumeroB = Console.ReadLine();
-                float nB;
-                if (!float.TryParse(inpNumeroB, out nB))
+                float auxNumeroB;
+                if (!float.TryParse(inpNumeroB, out auxNumeroB))
                 {
                     throw new Exception("Solo puede ingresar números...");
                 }
-                this.numeroB = nB;
+                this.numeroB = auxNumeroB;
 
                 Console.WriteLine($"Numeros ingresados: {this.numeroA}, {this.numeroB}");
             }
             catch (FormatException fe)
             {
-                Console.WriteLine(fe.Message);  
+                Console.WriteLine(fe.Message);
             }
         }
 
@@ -43,9 +43,9 @@
             try
             {
                 this.setNumeros();
-                Console.WriteLine($"Suma: {(this.numeroA + this.numeroB).ToString()}");
+                Console.WriteLine($"Suma: {(this.numeroA + this.numeroB)}");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -56,9 +56,9 @@
             try
             {
                 this.setNumeros();
-                Console.WriteLine($"Resta: {(this.numeroA - this.numeroB).ToString()}");
+                Console.WriteLine($"Resta: {(this.numeroA - this.numeroB)}");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -69,11 +69,11 @@
             try
             {
                 this.setNumeros();
-                Console.WriteLine($"Multiplicación: {(this.numeroA * this.numeroB).ToString()}");
+                Console.WriteLine($"Multiplicación: {(this.numeroA * this.numeroB)}");
             }
             catch (Exception e)
             {
-                Console.WriteLine( e.Message);
+                Console.WriteLine(e.Message);
             }
         }
 
@@ -83,7 +83,7 @@
             {
                 this.setNumeros();
                 if (this.numeroB == 0) throw new Exception("No existe la divición entre 0.");
-                Console.WriteLine($"División: {(this.numeroA / this.numeroB).ToString()}");
+                Console.WriteLine($"División: {(this.numeroA / this.numeroB)}");
             }
             catch (Exception e)
             {
@@ -96,8 +96,7 @@
             try
             {
                 this.setNumeros();
-                if (this.numeroB == 0) Console.WriteLine($"Potencia: 1");
-                else if (this.numeroB < 0) throw new Exception("El exponente no puede ser negativo.");
+                if (this.numeroB < 0) throw new Exception("El exponente no puede ser negativo.");
                 Console.WriteLine($"Potencia: {(Math.Pow(this.numeroA, this.numeroB))}");
             }
             catch (Exception e)
@@ -111,9 +110,9 @@
             try
             {
                 this.setNumeros();
-                if (this.numeroB == 0) throw new Exception("El indice no puede ser 0.");
-                else if (this.numeroA < 0) throw new Exception("El radicando no puede ser negativo");
-                Console.WriteLine($"Raíz: {(Math.Pow(this.numeroA, 1 / this.numeroB)).ToString()}");
+                if (this.numeroB == 0) throw new Exception("El radical no puede ser 0.");
+                else if (this.numeroA < 0) throw new Exception("El radicando no puede ser negativo.");
+                Console.WriteLine($"Raíz: {(Math.Pow(this.numeroA, 1 / this.numeroB))}");
             }
             catch (Exception e)
             {

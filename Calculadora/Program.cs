@@ -2,11 +2,11 @@
 
 using Calculadora;
 
-int opc=-1;
+int opc = -1;
 
-var menu = new Menu();
+var menu = new MenuClass();
 
-while(opc != 7)
+while (opc != 7)
 {
     opc = menu.InpOption();
     menu.SelectOption(opc);
