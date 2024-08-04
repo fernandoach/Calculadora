@@ -24,7 +24,7 @@ namespace Calculadora
                 Console.Write("Ingresa una opcion: ");
                 var optionInput = Console.ReadLine();
 
-                int option = Int32.Parse(optionInput ?? "0");
+                int option = int.Parse(optionInput ?? "0");
                 return option;
             }
             catch
